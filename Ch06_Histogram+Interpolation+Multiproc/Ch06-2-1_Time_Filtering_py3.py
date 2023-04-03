@@ -18,7 +18,7 @@ import sys
 import os.path
 import numpy as np
 from datetime import date
-import Ch6_common_functions as cf
+import Ch06_common_functions as cf
 
 def main_test():
     ###-------------------------

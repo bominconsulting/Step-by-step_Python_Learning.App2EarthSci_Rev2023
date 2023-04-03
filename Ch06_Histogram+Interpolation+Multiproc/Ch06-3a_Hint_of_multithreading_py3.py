@@ -19,7 +19,7 @@ import numpy as np
 import time
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from itertools import repeat
-import Ch6_common_functions as cf
+import Ch06_common_functions as cf
 
 def awi_thread_executor(func, indata, ud=-999., nThreads=1, chunk_size=0):
     """

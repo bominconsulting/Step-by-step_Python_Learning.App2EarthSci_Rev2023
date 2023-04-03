@@ -19,7 +19,7 @@ By Daeho Jin, 2023.01.30
 import numpy as np
 import sys
 import os.path
-import Ch6_common_functions as cf
+import Ch06_common_functions as cf
 
 def main():
     ### Precip File Info

@@ -45,6 +45,14 @@ def lon_formatter(x,pos):
     else:
         return "{:.0f}\u00B0".format(x)
 
+def lat_formatter(x,pos):
+    if x>0:
+        return "{:.0f}\u00B0N".format(x)
+    elif x<0:
+        return "{:.0f}\u00B0S".format(-x)
+    else:
+        return "{:.0f}\u00B0".format(x)
+        
 def bin_file_read2arr(fname, dtype=np.float32):
     """ Open a binary file, read data, and return as numpy 1-D array
         fname : file name
