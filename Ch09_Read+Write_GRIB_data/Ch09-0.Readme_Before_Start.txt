@@ -1,4 +1,21 @@
-본문에서 사용할 자료는 주어진 4개의 파일(U.1950010100.grb, U.1950010106.grb, U.1950010112.grb, U.1950010118.grb)을 병합한 자료입니다. 아래 명령어를 참고하여 자료를 병합해 주시기를 바랍니다.
+본문에서 사용할 자료는 주어진 4개의 파일(U.1950010100.grb, U.1950010106.grb, U.1950010112.grb, U.1950010118.grb)을 병합한 자료입니다.
+Unix/Linux 시스템에서는 아래 명령어를 이용하여 자료를 쉽게 병합해 사용할 수 있습니다.
 
 <프롬프트> cd ${파일위치}
-<프롬프트> cat U.19500101??.grb > U.19500101.grb 
+<프롬프트> cat U.19500101??.grb > U.19500101.grb
+
+또한 아래의 Python 프로그램을 이용하여 병합할 수도 있습니다.
+---
+import shutil
+
+indir= './Data/'
+fn0= 'U.19500101'
+fn_tail= '.grb'
+fn_tt= ['{:02d}'.format(val) for val in range(0,24,6)]
+
+fn_out= indir+fn0+fn_tail
+with open(fn_out,'wb') as fo:
+    for ft in fn_tt:
+        fn_in= indir+fn0+ft+fn_tail
+        with open(fn_in,'rb') as fi:
+            shutil.copyfileobj(fi,fo)
