@@ -172,6 +172,7 @@ def main():
 ### 1. (left) no-missing data
 ### 2. (right) with-missing data
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import matplotlib.colors as cls
 from matplotlib.ticker import FixedLocator, MultipleLocator
 import cartopy.crs as ccrs
@@ -197,7 +198,8 @@ def plot_main(pdata):
 
     ### Precip values vary exponentially, hence decide to use non-linear levels
     p_lev= [0.,0.1,0.2,0.5,1,2,5,10,20,50,100]
-    cm= plt.cm.get_cmap('terrain_r'); ## Define ColorMap
+    #cm= plt.cm.get_cmap('terrain_r'); ## Define ColorMap
+    cm= mpl.colormaps['terrain_r']
     cm.set_bad('r')  ## Set for missing data (masked grid cells)
     cm.set_under('0.8')  ## Set for values below 0.
     norm= cls.BoundaryNorm(p_lev, ncolors=cm.N, clip=False) ## Transform continuous colormap into distinct one.

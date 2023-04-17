@@ -64,6 +64,7 @@ def main():
 ### 1. Scatter plot
 ### 2. 2D-Joint Histogram plot
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import matplotlib.colors as cls
 from matplotlib.ticker import MultipleLocator,AutoMinorLocator
 
@@ -91,8 +92,8 @@ def plot_main(pdata):
     ax1=fig.add_axes([ix,iy-ly,lx,ly])
 
     ### Set properties
-    cm=plt.cm.get_cmap('jet'); ### Define ColorMap
-    props = dict(edgecolor='none',alpha=0.8,vmin=0.,vmax=3.,cmap=cm)
+    #cm=plt.cm.get_cmap('jet'); ### Define ColorMap
+    props = dict(edgecolor='none',alpha=0.8,vmin=0.,vmax=3.,cmap='jet')
 
     ### Draw scatter plot
     pic1=ax1.scatter(pcs[:,0],pcs[:,1],c=strs,s=15,marker='o',**props)
@@ -128,7 +129,8 @@ def plot_main(pdata):
 
     ### Set Properties
     newmax= 5 ## Set max percentage value, slightly larger than H.max()
-    cm= plt.cm.get_cmap('viridis',50)
+    #cm= plt.cm.get_cmap('viridis',50)
+    cm= mpl.colormaps['viridis'].resampled(50)
     cmnew= cm(np.arange(50))
     cmnew= np.concatenate((np.array([1,1,1,1]).reshape([1,-1]),cmnew[1:,:]))  ## Add white at the end
     newcm = cls.LinearSegmentedColormap.from_list("newcm",cmnew)

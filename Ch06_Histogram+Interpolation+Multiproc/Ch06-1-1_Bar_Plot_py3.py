@@ -70,6 +70,7 @@ def main():
 ### 2. Lined Bar(Step) plot
 ### 3. Stacked Bar plot
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 from matplotlib.ticker import MultipleLocator,AutoMinorLocator,FormatStrFormatter
 
 def plot_main(pdata):
@@ -156,7 +157,8 @@ def plot_main(pdata):
 
     ### Pick colors from existing colormap
     nph= hist_data.shape[0]
-    cm= plt.cm.get_cmap('nipy_spectral', nph+2) #nph*2+1)
+    #cm= plt.cm.get_cmap('nipy_spectral', nph+2) #nph*2+1)
+    cm= mpl.colormaps['nipy_spectral'].resampled(nph+2)
     cm= cm(np.arange(nph+2)) ## +2 for excluding end colors
     cc= []
     for i in range(nph):
