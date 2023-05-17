@@ -14,6 +14,7 @@
 # ================================================================
 
 # Imported modules ======================
+import sys
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -36,13 +37,22 @@ lat_name = 'Latitude'
 lon_name = 'Longitude'
 
 bt_all, lon_all,  lat_all= [], [], []
-for fn in np.arange(np.size(data_flist)):
-	data_fname = './data/radiance/'+data_flist[fn]
-	geo_fname = './data/geo/'+geo_flist[fn]
+for data_fn in sorted(data_flist):
 
-	if data_fname.strip().split('.')[-1].lower() != 'hdf':
-		#if data_fname.strip().split('.')[-2].lower() != 'sample':
+	if data_fn.strip().split('.')[-1].lower() != 'hdf':
 		continue
+	else:
+		fn_indicator= '.'.join(data_fn.strip().split('.')[1:4])
+		geo_fname= []
+		for geo_fn in geo_flist:
+			if fn_indicator in geo_fn:
+				geo_fname= './data/geo/'+geo_fn
+				break
+		if len(geo_fname)==0:
+			sys.exit('No matching geo file for {}'.format(fn_indicator))
+
+	data_fname = './data/radiance/'+data_fn
+	print(data_fn,geo_fn)
 
 	# --------------------------------------------
 	# 2. Read HDF4 data
@@ -68,14 +78,10 @@ for fn in np.arange(np.size(data_flist)):
 	longitude = hdf_geo.select(lon_name); 	lon = longitude[:,:]
 
 	# 2-4) Concatenate two data
-	#if fn == 0: bt_all=BT; lon_all=lon; lat_all=lat
-	#if fn != 0:
-	#	bt_all = np.concatenate((bt_all,BT),axis=0)
-	#	lon_all = np.concatenate((lon_all,lon),axis=0)
-	#	lat_all = np.concatenate((lat_all,lat),axis=0)
 	bt_all.append(BT)
 	lon_all.append(lon)
 	lat_all.append(lat)
+
 bt_all= np.concatenate(bt_all,axis=0)
 lon_all= np.concatenate(lon_all,axis=0)
 lat_all= np.concatenate(lat_all,axis=0)
