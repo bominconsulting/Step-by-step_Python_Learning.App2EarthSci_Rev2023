@@ -1,4 +1,4 @@
-# 1-1.read_grb_select.py 
+# 1-1.read_grb_select.py
 import pygrib as pg
 
 idir='./Data/'
@@ -7,5 +7,4 @@ fi=pg.open(idir+ifnam)
 var=fi.select(name='U component of wind')
 
 for grb in fi:
-	   print(grb)
-
+	print(grb)

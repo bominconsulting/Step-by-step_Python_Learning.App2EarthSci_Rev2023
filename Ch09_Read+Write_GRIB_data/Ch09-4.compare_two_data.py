@@ -27,11 +27,11 @@ for i in range(2):
                 result=list(data2)
         ax=plt.subplot(gs1[i],projection=ccrs.PlateCarree())
         c=ax.pcolormesh(lons, lats, result,\
- transform=ccrs.PlateCarree(), cmap='coolwarm')
+            transform=ccrs.PlateCarree(), cmap='coolwarm')
 
         gl = ax.gridlines(crs=ccrs.PlateCarree(),\
- draw_labels=True, linewidth=1, color='gray',\
- alpha=0.5, linestyle='--')
+            draw_labels=True, linewidth=1, color='gray',\
+            alpha=0.5, linestyle='--')
         ##gl.xlabels_top = False
         ##gl.ylabels_left = False
         gl.top_labels = False
@@ -44,6 +44,6 @@ for i in range(2):
         cbar.set_label('Zonal Wind (m/s)')
 
         plt.title("U at 500 hPa")
-plt.gca().coastlines()
+        plt.gca().coastlines()
 
 plt.show()

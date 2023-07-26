@@ -10,8 +10,7 @@ atag=test_html.find_all('a')
 omps_list=[]
 
 for i in atag:
-        href=i.attrs['href']
-        if href.endswith(".txt"):
-             omps_list.append(href)
-             print(href)
-
+    href=i.attrs['href']
+    if href.endswith(".txt"):
+        omps_list.append(href)
+        print(href)

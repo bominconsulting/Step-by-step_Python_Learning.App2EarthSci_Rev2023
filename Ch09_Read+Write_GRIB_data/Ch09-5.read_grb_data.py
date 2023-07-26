@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import matplotlib.gridspec as gridspec
 
-idir='./data/'
+idir='./Data/'
 ifnam='U.19500101.grb'
 fi=pg.open(idir+ifnam)
 # 00시 500 hPa 자료 추출

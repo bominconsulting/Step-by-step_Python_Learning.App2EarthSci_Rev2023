@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import numpy as np
 
-idir='./Data_OMPS/Y2018/'
+idir='./Data/OMPS/Y2018/'
 ifnam='TCO.20180101_20181231.bin'
 
 nx=360
@@ -11,7 +11,7 @@ ny=180
 nt=365
 # 바이너리 파일 불러오기
 with open(idir+ifnam,"rb") as f:
-        buff=np.fromfile(f,dtype=np.float32)
+    buff=np.fromfile(f,dtype=np.float32)
 
 buff=buff.reshape((nt,ny,nx))
 
