@@ -3,7 +3,7 @@ from subprocess import run
 #prog = "python3"
 prog= '/Users/djin1/opt/miniconda3/bin/python3'
 
-file_name = "Ch6-3a_Hint_of_multithreading_py3.py"
+file_name = "Ch06-3a_Hint_of_multithreading_py3.py"
 
 exec0 = "{} {}".format(prog, file_name)
 print("> "+exec0)
