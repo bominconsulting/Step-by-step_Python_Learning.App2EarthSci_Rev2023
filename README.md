@@ -6,6 +6,10 @@ Packages/modules import examples
 ---
 
 ```
+###---
+### Python 3.8+ Recommended
+###---
+
 import numpy as np
 import glob
 
@@ -33,5 +37,5 @@ import xarray
 ```
 <br>
 <br>
-![Book_cover](Book_cover.jpg)
+![Book_cover](./Book_cover_small.jpg)
 <br>
