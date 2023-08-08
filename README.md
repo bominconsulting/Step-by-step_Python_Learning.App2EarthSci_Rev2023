@@ -2,9 +2,6 @@
 This repository contains python codes used in the book, Step-by-step Python Learning, Version of "Application to Earth Science" revised in 2023
 <br>
 <br>
-![Book_cover](Book_cover.jpg)
-<br>
-<br>
 Packages/modules import examples
 ---
 
@@ -34,3 +31,7 @@ import requests
 ### Optionally,
 import xarray
 ```
+<br>
+<br>
+![Book_cover](Book_cover.jpg)
+<br>
