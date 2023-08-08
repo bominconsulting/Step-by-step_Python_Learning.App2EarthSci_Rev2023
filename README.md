@@ -6,9 +6,9 @@ Packages/modules import examples
 ---
 
 ```
-###---
+###----
 ### Python 3.8+ Recommended
-###---
+###----
 
 import numpy as np
 import glob
@@ -35,7 +35,15 @@ import requests
 ### Optionally,
 import xarray
 ```
+
 <br>
-<br>
+
 ![Book_cover](./Book_cover_small.jpg)
 <br>
+ISBN#
+
+979-11-388-2176-6 (Vol 1)
+
+979-11-388-2177-3 (Vol 2)
+
+979-11-388-2175-9 (Set)
